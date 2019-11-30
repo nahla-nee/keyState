@@ -24,7 +24,7 @@ void closeKS(int fd){
 
 /*impelmentation that lets the user pass their own file descriptor.
 saves cost of opening and closing a file everytime*/
-char GetKeyState(int fd, int key){
+char getKeyStateFd(int fd, int key){
 	char keyState;
 	lseek(fd, key, SEEK_SET);
 	if(read(fd, (void*)&keyState, 1) == -1){
